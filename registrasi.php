@@ -9,7 +9,7 @@ $koneksi;
   <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Bootstrap demo</title>
+    <title>Registration</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
     <style>
         body{
@@ -36,14 +36,15 @@ $koneksi;
                     <?php endif; ?>
                     
                     <div class="card-body">
+                        <h1>Form Registration</h1>
                         <form action="proses/prosesRegist.php" method="POST">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
-                                <input type="text" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+                                <input type="text" name="user" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Password</label>
-                                <input type="password" name="pass" class="form-control" id="exampleInputPassword1">
+                                <input type="password" name="pass" class="form-control" id="exampleInputPassword1" required>
                             </div>
                             <div class="mb-3">
                                 <label for="exampleInputPassword1" class="form-label">Konfirmasi Password</label>
