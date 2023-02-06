@@ -36,7 +36,7 @@ $koneksi;
                     <?php endif; ?>
                     
                     <div class="card-body">
-                        <h1>Form Registration</h1>
+                        <h1 class="text-center mb-4">Form Registration</h1>
                         <form action="proses/prosesRegist.php" method="POST">
                             <div class="mb-3">
                                 <label for="exampleInputEmail1" class="form-label">Username</label>
@@ -54,7 +54,8 @@ $koneksi;
                                 <input type="checkbox" class="form-check-input" id="exampleCheck1">
                                 <label class="form-check-label" for="exampleCheck1">Check me out</label>
                             </div> -->
-                            <button type="submit" name="Register" class="btn btn-primary">Register</button>
+                            <button type="submit" name="Register" class="btn btn-primary mb-5 mt-3">Register</button> <br>
+                            <a href="login.php">Sudah punya akun?, silahkan login</a>
                         </form>
                     </div>
                 </div>
