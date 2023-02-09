@@ -25,6 +25,7 @@
             overflow-x:hidden;
         }
         
+        /* responsive dilayar 576px */
         @media only screen and (max-width: 576px) {
             body {
                 background-image: url(aset/aset1.jpg);
@@ -39,8 +40,22 @@
                 color:red;
             } */
         }
-                    
+         
+        /* responsive di layar 600px */
+        @media only screen and (min-width: 600px) {
+            body {
+                background-image: url(aset/aset1.jpg);
+                background-repeat: no-repeat;
+                background-size: cover;
+                position: relative;
+                overflow-x:hidden;
+                height:620px;
+            }
 
+            /* body > main > div > div> h1{
+                color:red;
+            } */
+        }
         @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Hepta+Slab&family=Kdam+Thmor+Pro&family=PT+Sans&family=Silkscreen&family=Ubuntu+Mono&display=swap');
     </style>
   </head>
