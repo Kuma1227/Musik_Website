@@ -82,7 +82,7 @@
         
         <!-- footer -->
         <div class="kaki text-center fs-3" style="background-color:white; margin-top:266px;">
-           <div>Mu<span class="text-info ">Z</span>eek <span class="fs-5">copyright &#169; 2023</span></div>
+           <div>Mu<span class="text-info ">Z</span>eek <span class="fs-5">copyright &#169; <?php echo date('Y')?></span></div>
         </div>
         <!-- akhir footer -->
     </body>
