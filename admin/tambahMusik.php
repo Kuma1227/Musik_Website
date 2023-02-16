@@ -1,3 +1,8 @@
+<?php
+    require '../koneksi.php';
+    $koneksi;
+?>
+
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -7,6 +12,7 @@
     <meta name="description" content="" />
     <meta name="author" content="" />
     <title>Dashboard - MuZeek</title>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@48,400,0,0" />
     <link href="https://cdn.jsdelivr.net/npm/simple-datatables@latest/dist/style.css" rel="stylesheet" />
     <link href="../aset/resource/css/styles.css" rel="stylesheet" />
     <script src="https://use.fontawesome.com/releases/v6.1.0/js/all.js" crossorigin="anonymous"></script>
@@ -42,47 +48,41 @@
       <div id="layoutSidenav_content">
         <main>
           <div class="container-fluid px-4">
-            <h1 class="mt-4">Dashboard</h1>
+            <h1 class="mt-4">Musik</h1>
             <div class="card mb-4 mt-5">
-              <!-- <div class="card-header">
-                <i class="fas fa-table me-1"></i>
-                DataTable Example
-              </div> -->
               <div class="card-body">
-                <!-- <table id="datatablesSimple">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </thead>
-                  <tfoot>
-                    <tr>
-                      <th>Name</th>
-                      <th>Position</th>
-                      <th>Office</th>
-                      <th>Age</th>
-                      <th>Start date</th>
-                      <th>Salary</th>
-                    </tr>
-                  </tfoot>
-                  <tbody>
-                    <tr>
-                      <td>Tiger Nixon</td>
-                      <td>System Architect</td>
-                      <td>Edinburgh</td>
-                      <td>61</td>
-                      <td>2011/04/25</td>
-                      <td>$320,800</td>
-                    </tr>
-                  </tbody>
-                </table> -->
-                <h2 class="text-center">WELCOME ADMIN</h2>
-              </div>
+                    <div class="row">
+                        <div class="col">
+                            <form action="proses.php" method="post"  enctype="multipart/form-data">
+                                <label for="formGroupExampleInput" class="form-label">kategori</label>
+                                <select class="form-select" aria-label="Default select example" required name='kategori'>
+                                    <option selected>- pilih -</option>
+                                    <?php
+                                        $koneksi;
+                                        $sql = "SELECT * FROM musikkategori ORDER BY idKategori ASC";
+                                        $hasil = mysqli_query($koneksi, $sql);
+                                        while($data = mysqli_fetch_assoc($hasil)){
+                                            echo "<option value='$data[idKategori]'>$data[kategori]</option>";
+                                        }
+                                    ?>
+                                </select>
+                                <div class="mt-4">
+                                    <label for="formGroupExampleInput" class="form-label">Masukan file musik</label>
+                                    <input type="file" name="musik" class="form-control" id="formGroupExampleInput" required >
+                                </div>
+                                <div class="mt-4">
+                                    <label for="formGroupExampleInput" class="form-label">judul musik</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" required name="judul">
+                                </div>
+                                <div class="mt-4 mb-4">
+                                    <label for="formGroupExampleInput" class="form-label">keterangan</label>
+                                    <input type="text" class="form-control" id="formGroupExampleInput" required name="keterangan">
+                                </div>
+                                <input type="submit" value="Submit" class="btn btn-info text-light"/>
+                            </form> 
+                        </div>
+                    </div>
+                </div>
             </div>
           </div>
         </main>
